@@ -114,6 +114,6 @@ func (svc *routesHandler) Upload(w http.ResponseWriter, r *http.Request) {
 		w.Write([]byte(err.Error()))
 		return
 	}
-
-	w.Write([]byte("hello world"))
+	w.WriteHeader(http.StatusOK)
+	w.Write([]byte("Successfully Uploaded file"))
 }
